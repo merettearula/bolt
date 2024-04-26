@@ -2,148 +2,85 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-    font-display: swap;
-    font-family: euclidCircularB;
-    src: url(/static/EuclidCircularB-Regular-WebM-91d81ee72b93ca24a2024c37602c11b2.woff2) format("woff2");
+.columnTitle {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.333;
+    margin-bottom: 16px;
 }
 
-@font-face {
-    font-display: swap;
-    font-family: euclidCircularB;
-    font-weight: 500;
-    src: url(/static/EuclidCircularB-Medium-3d208ed259f6be7deb77e45e853cf992.woff2) format("woff2");
-}
-
-@font-face {
-    font-display: swap;
-    font-family: euclidCircularB;
-    font-weight: 600;
-    src: url(/static/EuclidCircularB-Semibold-WebM-94e67fdbaee5757b3fe9325af7dff0c0.woff2) format("woff2");
-}
-
-.hp-container {
-    margin: auto;
-    max-width: 1248px;
-    padding: 0 24px;
-    position: relative;
-}
-
-.hp-container.lg {
-    max-width: 1440px;
-}
-
-.hp-container.xl {
-    max-width: 1680px;
-}
-
-.hp-container.full-width {
-    padding: 0;
-}
-
-.spinner {
-    -webkit-animation: spin 2s linear infinite;
-    animation: spin 2s linear infinite;
-}
-
-.nav-top {
-    direction: ltr;
-    position: relative;
-}
-
-@media screen and (min-width: 960px) {
-    .nav-top {
-        z-index: 9999;
+@media screen and (min-width: 480px) {
+    .columns {
+        flex-basis: 50%;
     }
+}
+
+@media screen and (min-width: 480px) {
+    .footerMain {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+}
+
+.columns {
+    margin-bottom: 28px;
+}
+
+*, :after, :before {
+    box-sizing: border-box;
+}
+
+.columnElements {
+    padding-bottom: 8px;
+    padding-top: 8px;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.333;
+    margin-bottom: 16px;
+}
+
+.columnElements:hover {
+    padding-bottom: 8px;
+    padding-top: 8px;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.333;
+    margin-bottom: 16px;
+    color: rgb(56, 216, 136);
+}
+
+.columnElement {
+    line-height: 1.5;
+}
+
+a {
+    color: inherit;
+    text-decoration: inherit;
 }
 
 a {
     text-decoration: none;
 }
 
-a :visited {
-    color: none;
+div {
+    display: block;
+    unicode-bidi: isolate;
 }
 
-a.inline-link {
-    text-decoration: underline;
+body {
+    line-height: inherit;
+    margin: 0;
 }
 
-button {
-    background: none;
-    cursor: pointer;
-}
-
-.cta-btn {
-    border-radius: 100px;
-    display: inline-block;
-    font-weight: 700;
-    letter-spacing: .1em;
-    line-height: 24px;
-    text-align: center;
-    text-transform: uppercase;
-}
-
-.bg-circle {
-    border-radius: 50%;
-    position: absolute !important;
-}
-
-.bg-image-container {
-    display: inline-block;
-    position: relative;
-    vertical-align: top;
-    width: 100%;
-}
-
-.bg-image {
-    background-repeat: no-repeat;
-    background-size: contain;
-    width: 100%;
-}
-
-.cookie-declaration a {
-    color: #2eb875;
-}
-
-[dir=rtl] .nav-top {
-    direction: rtl;
-}
-
-@media screen and (min-width: 960px) {
-    [dir=rtl] .logo {
-        margin-left: 16px;
-        margin-right: -16px;
-    }
-}
-
-ol,
-ul {
-    white-space: normal;
-}
-
-@supports (height: 100dvh) {
-    .navigation-safe-screen {
-        height: 100dvh;
-    }
-}
-
-@supports not (height: 100dvh) {
-    .navigation-safe-screen {
-        height: 100vh;
-        padding-bottom: calc(env(safe-area-inset-bottom) + 32);
-    }
-}
-
-@supports not (padding-bottom: env(safe-area-inset-bottom)) {
-    .navigation-safe-screen {
-        height: 100vh;
-        padding-bottom: 200px;
-    }
-}
-
-.transition-navigation {
-    transition: background .5s cubic-bezier(.28, .11, .32, 1) 0ms, border .25s ease-in-out 0ms;
+html {
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-feature-settings: normal;
+    font-feature-settings: normal;
+    font-family: euclidCircularB, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont, Helvetica Neue, Arial, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+    font-variation-settings: normal;
+    line-height: 1.5;
+    tab-size: 4;
 }
 
 html {
@@ -153,4 +90,146 @@ html {
     font-size: 16px;
     font-weight: 400;
     scroll-behavior: smooth;
+}
+
+@media screen and (min-width: 768px) {
+    .mhrtu80.container {
+        padding-bottom: 80px;
+        padding-top: 80px;
+    }
+}
+
+.mhrtu80.container {
+    padding-bottom: 40px;
+    padding-top: 40px;
+}
+
+.px-6 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+.footerMain {
+    display: flex;
+}
+
+.columns {
+    flex: 0 0 auto; /* Prevent columns from growing */
+    width: calc(50% - 14px); /* Set the width of each column */
+    margin-bottom: 28px;
+}
+
+.container {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+}
+
+*, :after, :before {
+    --tw-border-spacing-x: 0;
+    --tw-border-spacing-y: 0;
+    --tw-translate-x: 0;
+    --tw-translate-y: 0;
+    --tw-rotate: 0;
+    --tw-skew-x: 0;
+    --tw-skew-y: 0;
+    --tw-scale-x: 1;
+    --tw-scale-y: 1;
+    --tw-pan-x: ;
+    --tw-pan-y: ;
+    --tw-pinch-zoom: ;
+    --tw-scroll-snap-strictness: proximity;
+    --tw-gradient-from-position: ;
+    --tw-gradient-via-position: ;
+    --tw-gradient-to-position: ;
+    --tw-ordinal: ;
+    --tw-slashed-zero: ;
+    --tw-numeric-figure: ;
+    --tw-numeric-spacing: ;
+    --tw-numeric-fraction: ;
+    --tw-ring-inset: ;
+    --tw-ring-offset-width: 0px;
+    --tw-ring-offset-color: #fff;
+    --tw-ring-color: rgba(59,130,246,.5);
+    --tw-ring-offset-shadow: 0 0 transparent;
+    --tw-ring-shadow: 0 0 transparent;
+    --tw-shadow: 0 0 transparent;
+    --tw-shadow-colored: 0 0 transparent;
+    --tw-blur: ;
+    --tw-brightness: ;
+    --tw-contrast: ;
+    --tw-grayscale: ;
+    --tw-hue-rotate: ;
+    --tw-invert: ;
+    --tw-saturate: ;
+    --tw-sepia: ;
+    --tw-drop-shadow: ;
+    --tw-backdrop-blur: ;
+    --tw-backdrop-brightness: ;
+    --tw-backdrop-contrast: ;
+    --tw-backdrop-grayscale: ;
+    --tw-backdrop-hue-rotate: ;
+    --tw-backdrop-invert: ;
+    --tw-backdrop-opacity: ;
+    --tw-backdrop-saturate: ;
+    --tw-backdrop-sepia: ;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.inline-block {
+    display: inline-block;
+}
+
+[role=button], button {
+    cursor: pointer;
+}
+
+
+@media (min-width: 960px) {
+    .md\:mb-0 {
+        margin-bottom: 0;
+    }
+}
+
+.items-start {
+    align-items: flex-start;
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
+.basis-\[25\%\] {
+    flex-basis: 25%;
+}
+
+.mb-7 {
+    margin-bottom: 1.75rem;
+}
+
+element.style {
+    max-width: 69px;
+    display: block;
+}
+
+element.style {
+    opacity: 0;
+    transition: opacity 500ms linear 0s;
+    background-color: rgb(56, 216, 136);
+    position: absolute;
+    inset: 0px;
+}
+
+.gatsby-image-wrapper-constrained {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.gatsby-image-wrapper {
+    position: relative;
+    overflow: hidden;
 }
